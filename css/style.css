@@ -1,0 +1,300 @@
+:root {
+  --primary: #000000;
+  --secunder: #24a6f1;
+  --bg: #f2eded;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--primary);
+  min-height: 100vh;
+}
+
+.darkmode {
+  background-color: #2f2d2c;
+  color: #ddd;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: var(--secunder);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+}
+.darkmode .navbar {
+  background-color: #c74a4a;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+.darkmode .navbar-logo {
+  color: #000000;
+}
+
+.navbar-logo span {
+  color: var(--primary);
+}
+.darkmode .navbar-logo span {
+  color: var(--bg);
+}
+
+.navbar .navbar-nav a {
+  font-size: 1.3rem;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0.1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar .dark-light {
+  color: var(--bg);
+  cursor: pointer;
+}
+.navbar .dark-light :hover {
+  color: var(--primary);
+}
+
+.hidden {
+  display: none;
+}
+
+#sidebar {
+  display: none;
+  color: var(--bg);
+}
+
+/* Style Home */
+.note {
+  display: block;
+  padding: 0rem 7%;
+  font-weight: 500;
+  font-style: normal;
+}
+.darkmode .note {
+  color: var(--bg);
+}
+
+/* Style Menu */
+.PilihanPekerjaan {
+  max-width: 100vw;
+  padding: 0rem 7%;
+  font-weight: 500;
+  /*background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);*/
+}
+
+form {
+  /*padding: 1.2rem;
+   /*background-color: #f9f9f9;
+  border: 0.2rem solid #ddd;
+ border-radius: 1rem;*/
+}
+
+label,
+input,
+select,
+button {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+label {
+  font-weight: bold;
+  font-weight: 500;
+}
+
+select {
+  width: 100%;
+  padding: 1rem;
+  border: 0.2rem solid #ccc;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 1rem;
+  border: 0.2rem solid #ccc;
+  border-radius: 1rem;
+  font-weight: 300;
+}
+
+button {
+  background-color: #1310d3d7;
+  color: #fff;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#hasil {
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.darkmode table {
+  background-color: var(--bg);
+  color: #000000;
+}
+
+th,
+td {
+  border: 0.2rem solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* About section*/
+.about {
+  padding: 5rem 7% 1.4rem;
+}
+.about h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.about h2 span {
+  color: var(--secunder);
+}
+/*Kontak*/
+.kontak {
+  padding: 5rem 7%;
+}
+.kontak h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.kontak h2 span {
+  color: var(--secunder);
+}
+
+#kontak-form {
+  padding: 0rem 7%;
+}
+
+#pesan {
+  padding: 6rem 7%;
+}
+
+#kirim-button {
+  margin-top: 1rem;
+}
+/* Footer */
+footer {
+  background-color: var(--secunder);  
+  text-align: center;
+  padding: 1rem 0 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.darkmode footer {
+  background-color: #c74a4a;
+}
+
+footer .credit {
+  font-size: 1.2rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Media Queries untuk responsif */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #sidebar {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--secunder);
+    width: 17rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .darkmode .navbar .navbar-nav {
+    background-color: #c74a4a;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: #fff;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .content .gambar-gambar {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  .content .gambar-gambar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

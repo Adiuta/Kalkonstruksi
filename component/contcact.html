@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konstruksi Calc</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <a href="../index.html" class="navbar-logo"
+      >Konstruksi <span>Calc</span> .</a
+      >
+      <div class="navbar-nav">
+        <a href="../index.html">Home</a>
+        <a href="../component/about.html">Tentang Kami</a>
+        <a href="../component/contcact.html">Kontak</a>
+      </div>
+
+      <div class="dark-light">
+        <i class="icon-sun" data-feather="sun"></i>
+        <i class="icon-moon" data-feather="moon"></i>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="sidebar"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Konten start -->
+    <section id="kontak" class="kontak">
+      <h2><span>Informasi</span> Kontak</h2>
+        <div class="alamat">
+            <h3>Denpasar Bali</h3>
+    </section>
+        <section>
+            <h3 id="pesan">Kirim Pesan Anda</h3>
+            <form id="kontak-form" action="#" method="POST">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+                
+                <label for="email">Alamat Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" rows="4" required></textarea>
+                
+                <button type="button" id="kirim-button">Kirim</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById("kirim-button").addEventListener("click", function () {
+            // Mengambil nilai dari input
+            var nama = document.getElementById("nama").value;
+            var email = document.getElementById("email").value;
+            var pesan = document.getElementById("pesan").value;
+
+            // Validasi
+            if (nama === "" || email === "" || pesan === "") {
+                alert("Semua bidang harus diisi.");
+            } else {
+                // Di sini Anda dapat menambahkan kode untuk mengirim data formulir
+                // ke server atau melakukan tindakan lain yang diperlukan.
+                alert("Formulir telah berhasil dikirim!");
+                document.getElementById("kontak-form").reset(); // Mengosongkan formulir setelah pengiriman.
+            }
+        });
+    </script>
+    <!-- Konten end -->
+    <!-- Footer start -->
+    <footer>
+      <div class="credit">
+        <p>&copy; 2023 <em>KonstruksiCalc.</em> Created by adi putra.</p>
+      </div>    
+    </footer>
+    <!-- Footer end -->
+    <!-- Javascript Responsif -->
+    <script src="../js/atribut.js"></script>
+    <script src="../js/menu.js"></script>
+    <script>
+      // Menggantikan ikon menggunakan Feather Icons
+      feather.replace();
+    </script>
+  </body>
+</html>
